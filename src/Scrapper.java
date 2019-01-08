@@ -21,7 +21,7 @@ public class Scrapper {
         static String fullUrl = url+formattedString;
          TreeMap<String, String> movies ;
 
-    public static List getMovies()throws IOException{
+    public static void main(String[] args)throws IOException{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDate localDate = LocalDate.now();
         String formattedString = localDate.format(formatter);
@@ -33,11 +33,15 @@ public class Scrapper {
 
         Elements movieTitle = doc.getElementsByClass("movie-details-link-click");
         Elements movieTime = doc.getElementsByClass("showtime  showtimeLink");
+
+
+
         for(int i=0; i<movieTitle.size(); i++){
             movies.add(movieTitle.get(i).text());
 
         }
-        return movies;
+
+        System.out.println(movieTime.text());
     }
 
 

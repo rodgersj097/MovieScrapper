@@ -37,14 +37,14 @@ public class EmailSender {
                 message.setFrom(new InternetAddress(sender));
                 message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
                 message.setSubject("New Movies at Barrie Theatre");
-                message.setText(String.valueOf(Scrapper.getMovies()));
+             //   message.setText(String.valueOf(Scrapper.getMovies()));
 
                 Transport.send(message);
             } catch (AddressException e) {
                 e.printStackTrace();
             } catch (MessagingException e) {
                 e.printStackTrace();
-            } catch (IOException e) {
+           // } catch (IOException e) {
                 e.printStackTrace();
             }
         }
